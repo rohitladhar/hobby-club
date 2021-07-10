@@ -1,0 +1,102 @@
+{%load static%}
+<!doctype html>
+
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Application Update </title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+
+
+    <link rel="stylesheet" href="{% static 'staff/vendors/bootstrap/dist/css/bootstrap.min.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'staff/assets/css/style.css' %}">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+<style>
+    .messcolor{
+        color:green;
+        
+    }
+</style>
+<script>
+function validateForm() {
+    var x = document.forms["application"]["username"].value;
+    if (x == "") {
+      alert("Username cannot be empty");
+      return false;
+    }
+  }
+</script>
+</head>
+
+<body class="bg-dark">
+
+
+    <div class="sufee-login d-flex align-content-center flex-wrap">
+        <div class="container">
+            <div class="login-content">
+                <div class="login-logo">
+                    <h2  style="color:whitesmoke">
+                        Application Update
+                    </h2>
+                </div>
+                <div class="login-form">
+                    <form action="applicationupdate" name="application" onsubmit="return validateForm()" method="post" autocomplete="off" enctype="multipart/form-data" class="form-horizontal">
+                        {%csrf_token%}
+                            <div class="form-group">
+                                <label for="name-input" class=" form-control-label">Username:</label>
+                                <input type="text" id="name" name="username" value="{{username}}"  class="form-control" readonly>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="name-input" >Slot:</label>
+                                <input type="text" class="form-control"  value="{{slot}}" readonly >
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="status-input" >Status:</label>
+                                
+                                    <select name="status" id="status"  class="form-control">
+                                        <option value="{{status}}">{{status}}</option>
+                                        <option value="Approved">Approved</option>
+                                        <option value="Rejected">Rejected</option> 
+                                    </select>
+                                
+                            </div><br/>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success">Update</button>
+                            </div>
+                           
+                            <a href="{% url 'applicationview' %}"><button type="button" class="btn btn-info">
+                                    Back
+                            </button></a>
+                            
+                            <div class="messcolor">
+                                {% for message in messages%}
+                                <h5>{{message}}</h5>
+                                {%endfor%}
+                            </div>
+                    </form>   
+                </div> 
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{% static 'staff/vendors/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'staff/vendors/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'staff/vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'staff/assets/js/main.js' %}"></script>
+
+
+</body>
+
+</html>

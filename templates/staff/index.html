@@ -1,0 +1,561 @@
+{%load static%}
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ladhar Clubs Admin </title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'staff/vendors/bootstrap/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'staff/vendors/font-awesome/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'staff/vendors/themify-icons/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'staff/assets/css/style.css' %}">
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    
+    
+    
+</head>
+
+<body>
+
+
+    <!-- Left Panel -->
+
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#">LADHAR CLUB</a>
+            </div>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="homepage"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                    </li>
+                    <h3 class="menu-title">Details</h3><!-- /.menu-title -->
+                    
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Record</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-th"></i><a href="addrecord">Add Record</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="recordview">View Record</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Applications</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-th"></i><a href="booking">Booking</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="deletebooking">Delete Booking</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="applicationview">Status Update</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="bookingview">Booking List</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Content</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-th"></i><a href="addcontent">Add Content</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="contentview">View Content</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Contact</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-th"></i><a href="contact">View</a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside><!-- /#left-panel -->
+
+    <!-- Left Panel -->
+
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+
+        <!-- Header-->
+        <header id="header" class="header">
+
+            <div class="header-menu">
+
+                <div class="col-sm-7">
+                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                    <div class="header-left">
+                        <div class="dropdown for-notification">
+                            <div class="dropdown-menu" aria-labelledby="notification">
+                            </div>
+                        </div>
+                        <div class="dropdown for-message">   
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-5">
+                    <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="user-avatar rounded-circle" src="{{context.image.url}}" alt="User Avatar">
+                        </a>
+
+                        <div class="user-menu dropdown-menu">
+                            <a class="nav-link" href="#"><i class="fa fa-user"></i>
+                                <button data-target="#abc" data-toggle="modal" class="btn pmd-ripple-effect btn-primary pmd-btn-raised" 
+                                type="button" style="background-color: transparent; border: none;
+                                cursor:pointer; color:black;">Profile</button></a>
+                            <a class="nav-link" href="logout"><i class="fa fa-power-off"></i> <button 
+                                class="btn pmd-ripple-effect btn-primary pmd-btn-raised" 
+                                type="button" style="background-color: transparent; border: none;
+                                cursor:pointer; color:black;">Logout</button></a>
+                        </div>
+                    </div>
+
+                    <div class="language-select dropdown" id="language-select">
+                        <a class="dropdown-toggle" href="#"  aria-haspopup="true" aria-expanded="true">
+                            {{context.name}}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="language">
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </header><!-- /header -->
+        <!-- Header-->
+
+        <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Ladhar Club </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li class="active">Admin</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content mt-3">
+            <div class="col-sm-6 col-lg-4">
+                <div class="card text-white bg-flat-color-2" style="padding-bottom: 3rem; padding-top:2rem;">
+                    <div class="card-body pb-0">
+                        <h4 class="text-light" style="text-align: center;">Total Numbers of Users</h4>
+                        <h3 style="text-align: center;">
+                            <span class="count">3000</span>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <!--/.col-->
+            
+            
+            <div class="col-sm-6 col-lg-4">
+                <div class="card text-white bg-flat-color-5" style="padding-bottom: 3rem; padding-top:2rem;">
+                    <div class="card-body pb-0">
+                        <h4 class="text-light" style="text-align: center;">Total Numbers Active of Users</h4>
+                        <h3 style="text-align: center;">
+                            <span class="count">2270</span>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <!--/.col-->
+            
+
+            <div class="card text-white bg-flat-color-4" style="padding-bottom: 3rem; padding-top:2rem;">
+                <div class="card-body pb-0">
+                    <h4 class="text-light" style="text-align: center;">Total Numbers of Inactive Users</h4>
+                    <h3 style="text-align: center;">
+                        <span class="count">730</span>
+                    </h3>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 style="text-align: center;">Total Collection</h4>
+                        <div id='myChart1'></div>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 style="text-align: center;">Total Users (Activity-Wise)</h4>
+                        <div id='myChart2'></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 style="text-align: center;">Monthly Collection</h4>
+                        <div id="myChart3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 style="text-align: center;">New Admissions</h4>
+                        <div id="myChart4"></div>
+                    </div>
+                </div>
+            </div>                 
+        </div> 
+    </div>
+    <div tabindex="-1" class="modal pmd-modal fade" id="abc" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                     
+                      <div class="media-body">
+                        <h3 class="card-title">Ladhar Clubs</h3>
+                        <p class="card-subtitle">{{context.name}}</p>
+                      </div>
+                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                </div>
+                <div class="pmd-modal-media"><img width="700" height="450" class="img-fluid" src="{{context.image.url}}"> </div>
+                <div class="modal-body"> 
+                    <p>Cards provide context and an entry point to more robust information and views. Don't overload cards with extraneous information or actions.</p>
+                </div>
+                <div class="modal-footer">
+                    <div class="card-text text-sm-center">
+                        <a href="#"><i class="fa fa-facebook pr-1"></i></a>
+                        <a href="#"><i class="fa fa-twitter pr-1"></i></a>
+                        <a href="#"><i class="fa fa-linkedin pr-1"></i></a>
+                        <a href="#"><i class="fa fa-pinterest pr-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>        
+    <!-- Right Panel -->
+
+    <script src="{% static 'staff/vendors/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'staff/vendors/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'staff/vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'staff/assets/js/main.js' %}"></script>
+
+
+    
+    <script src="{% static 'staff/assets/js/dashboard.js' %}"></script>
+    <script src="{% static 'staff/assets/js/widgets.js' %}"></script>
+    <script src="{% static 'staff/assets/js/init-scripts/chart-js/chartjs-init.js' %}"></script>
+    
+    
+    <script>
+        (function($) {
+            "use strict";
+
+            jQuery('#vmap').vectorMap({
+                map: 'world_en',
+                backgroundColor: null,
+                color: '#ffffff',
+                hoverOpacity: 0.7,
+                selectedColor: '#1de9b6',
+                enableZoom: true,
+                showTooltip: true,
+                values: sample_data,
+                scaleColors: ['#1de9b6', '#03a9f5'],
+                normalizeFunction: 'polynomial'
+            });
+        })(jQuery);
+    </script>
+    <script>
+        
+    window.addEventListener('load', () => {
+            
+                let chartData1 =
+                [
+                
+                {
+                    id: 'activity',
+                    parent: '',
+                    name: 'activity',
+                    "background-color":"#3333cc",
+                    group: ''
+                },
+                {
+                    id: 'singing',
+                    parent: 'activity',
+                    name: 'Singing',
+                    value:'{{ss}}',
+                    
+                },
+                {
+                    id: 'dancing',
+                    parent: 'activity',
+                    name: 'Dancing',
+                    value: '{{ds}}',
+                    
+                },
+                {
+                    id: 'arts',
+                    parent: 'activity',
+                    name: 'Arts',
+                    value: '{{as}}',
+                    
+                },
+                
+                {
+                    id: 'pd',
+                    parent: 'activity',
+                    name: 'P D',
+                    value: '{{pds}}',
+                    
+                },
+                
+                
+                ];
+            
+    let chartConfig1 = {
+                type: 'bubble-pack',
+                plotarea: {
+                    margin: 10
+                },
+                options: {
+                    palette: ['#ADD8E6', '#FFB6C1'],
+                    padding: 0,
+                    minSize: 3,
+                    
+                    format: {
+                    short: true,
+                    }
+                },
+                series: chartData1
+                };
+                
+                zingchart.loadModules('bubble-pack', function(){
+                zingchart.render({
+                    id: 'myChart1',
+                    data: chartConfig1,
+                    
+                });
+                });
+            });
+  
+    </script>
+    <script>
+        var myConfig2 = {
+            type: 'pie',
+            "legend":{
+              "x":"75%",
+              "y":"25%",
+              "border-width":1,
+              "border-color":"gray",
+              "border-radius":"5px",
+              "header":{
+                "text":"Activity",
+                "font-family":"Georgia",
+                "font-size":12,
+                "font-color":"#3333cc",
+                "font-weight":"normal"
+              },
+              "marker":{
+                "type":"circle"
+              },
+              "toggle-action":"remove",
+              "minimize":true,
+              "icon":{
+                "line-color":"#9999ff"
+              },
+              "max-items":4,
+              "overflow":"scroll"
+            },
+            "plotarea":{
+              "margin-right":"30%",
+              "margin-top":"15%"
+            },
+            "plot":{
+              "value-box":{
+                "text":"%v",
+                "font-size":12,
+                "font-family":"Georgia",
+                "font-weight":"normal",
+                    "placement":"out",
+                    "font-color":"gray",
+              },
+              "tooltip":{
+                "text":"%t: %v (%npv%)",
+                "font-color":"black",
+                "font-family":"Georgia",
+                "text-alpha":1,
+                "background-color":"white",
+                "alpha":0.7,
+                "border-width":1,
+                "border-color":"#cccccc",
+                "line-style":"dotted",
+                "border-radius":"10px",
+                "padding":"10%",
+                "placement":"node:center"
+              },
+              "border-width":1,
+              "border-color":"#cccccc",
+              "line-style":"dotted"
+            },
+            "series":[
+              
+                {
+                "values":['{{default}}'],
+                "background-color":"#ffffff",
+                "text":"No"
+              }, 
+              {
+                "values":['{{sc}}'],
+                "background-color":"#ff6600",
+                "text":"Singing"
+              },
+              
+              
+              {
+                "values":['{{dc}}'],
+                "background-color":"#88cc00",
+                "text":"Dancing"
+              },
+              
+              {
+                "values":['{{ac}}'],
+                "background-color":"#3399ff",
+                "text":"Arts"
+              },
+              
+              {
+                "values":['{{pdc}}'],
+                "background-color":"#3333cc",
+                "text":"P.D"
+              },
+              
+            ]
+          };
+          
+          zingchart.render({ 
+              id : 'myChart2', 
+              data : myConfig2, 
+              
+          });
+    </script>
+    <script>
+        let myConfig3 = {
+            type: 'line',
+            
+            legend: {
+              draggable: true,
+            },
+            scaleX: {
+              // Set scale label
+              label: { text: 'Days' },
+              // Convert text on scale indices
+              labels: [ 'Others','Singing', 'Dancing', 'Arts','P.D' ]
+            },
+            scaleY: {
+              // Scale label with unicode character
+              label: { text: 'Value' },
+              guide: {
+                'line-style': "dotted"
+              }
+            },
+            plot: {
+              
+              animation: {
+                effect: 'ANIMATION_EXPAND_BOTTOM',
+                method: 'ANIMATION_STRONG_EASE_OUT',
+                sequence: 'ANIMATION_BY_NODE',
+                speed: 275,
+              }
+            },
+            series: [
+              {
+                // plot 1 values, linear data
+                values: ['{{a}}','{{xa}}','{{xc}}','{{xe}}','{{xg}}'],
+                
+                text: 'April',
+              },
+              {
+                // plot 2 values, linear data
+                values: ['{{a}}','{{xb}}','{{xd}}','{{xf}}','{{xh}}'],
+                text: 'May'
+              },
+              
+            ]
+          };
+        zingchart.render({
+            id: 'myChart3',
+            data: myConfig3,
+          });
+    </script>
+    <script>
+        let myConfig4 = {
+            type: 'bar',
+            
+            legend: {
+              draggable: true,
+            },
+            scaleX: {
+              // Set scale label
+              
+              label: { text: 'Activity' },
+              // Convert text on scale indices
+              labels: [ 'Others','Singing', 'Dancing', 'Arts','P.D']
+            },
+            scaleY: {
+              // Scale label with unicode character
+              label: { text: 'Value' },
+            },
+            plot: {
+              
+              animation: {
+                effect: 'ANIMATION_EXPAND_BOTTOM',
+                method: 'ANIMATION_STRONG_EASE_OUT',
+                sequence: 'ANIMATION_BY_NODE',
+                speed: 275,
+              }
+            },
+            series: [
+              {
+                // plot 1 values, linear data
+                values: ['{{a}}','{{ab}}','{{cd}}','{{ef}}','{{gh}}'],
+                
+                text: 'April',
+              },
+              {
+                // plot 2 values, linear data
+                values: ['{{a}}','{{bc}}','{{de}}','{{fg}}','{{hi}}'],
+                text: 'May'
+              },
+              
+            ]
+          };
+        zingchart.render({
+            id: 'myChart4',
+            data: myConfig4,
+          });
+    </script>
+    
+    </body>
+
+</html>

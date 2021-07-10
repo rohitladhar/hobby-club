@@ -1,0 +1,87 @@
+{%load static%}
+<!doctype html>
+
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Update Details</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'staff/vendors/bootstrap/dist/css/bootstrap.min.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'staff/assets/css/style.css' %}">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+<style>
+    .messcolor{
+        color:green;
+        
+    }
+</style>
+<script>
+function validateForm() {
+    var x = document.forms["application"]["username"].value;
+    if (x == "") {
+      alert("Username cannot be empty");
+      return false;
+    }
+  }
+</script>
+</head>
+
+<body class="bg-dark">
+
+
+    <div class="sufee-login d-flex align-content-center flex-wrap">
+        <div class="container">
+            <div class="login-content">
+                <div class="login-logo">
+                    <h2  style="color:whitesmoke">
+                        Update Personal Detail
+                    </h2>
+                </div>
+                <div class="login-form">
+                    <form action="updatedetail" method="post" autocomplete="off" enctype="multipart/form-data" class="form-horizontal">
+                        {%csrf_token%}
+                            
+                            <div class="form-group">
+                              <label for="phone-input" class=" form-control-label">Phone:</label>
+                              <input type="number" id="phone" name="phone"   class="form-control" required>
+                            </div>
+                            <div class="email-group">
+                              <label for="name-input" class=" form-control-label">Email:</label>
+                              <input type="email" id="email" name="email"   class="form-control" required>
+                            </div>    <br/>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-success">Update</button>
+                            </div>
+                           
+                            <a href="{% url 'memberhome' %}"><button type="button" class="btn btn-info">
+                                    Back
+                            </button></a>
+                            
+                            <div class="messcolor">
+                                {% for message in messages%}
+                                <h5>{{message}}</h5>
+                                {%endfor%}
+                            </div>
+                    </form>   
+                </div> 
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{% static 'staff/vendors/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'staff/vendors/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'staff/vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'staff/assets/js/main.js' %}"></script>
+
+
+</body>
+
+</html>

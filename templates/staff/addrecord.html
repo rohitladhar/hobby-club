@@ -1,0 +1,345 @@
+{%load static%}
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Add Record</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+    <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    
+
+    <link rel="stylesheet" href="{% static 'staff/vendors/bootstrap/dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'staff/vendors/font-awesome/css/font-awesome.min.css' %}">
+    
+    
+    <link rel="stylesheet" href="{% static 'staff/vendors/selectFX/css/cs-skin-elastic.css' %}">
+
+    <link rel="stylesheet" href="{% static 'staff/assets/css/style.css' %}">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <style>
+        .usercolor{
+            color:red;
+            
+        }
+        .messcolor{
+            color:green;
+            
+        }
+    </style>
+<script>
+    function validate()
+    {
+      
+    if (/^[a-zA-Z\s]+$/.test(document.record.name.value)===false)
+      {
+        alert("Only Albhabets are allowed in Names");
+        return false;
+      }
+      else{
+        if (/^[0-9]{9,10}$/.test(document.record.phone.value)===false)
+         {
+           alert("Phone Number Contains only number and exact 10 numbers ");
+           return false;
+         }
+      else{
+         if (/^\S+@\S+\.\S+$/.test(document.record.email.value)===false)
+          {
+            alert("Invalid Email Format ");
+            return false;
+          }else{
+                return true;
+                }
+         } 
+  }
+}
+</script>
+
+
+</head>
+
+<body>
+    <!-- Left Panel -->
+    <aside id="left-panel" class="left-panel">
+        <nav class="navbar navbar-expand-sm navbar-default">
+
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="homepage">LADHAR CLUB</a>
+            </div>
+
+            <div id="main-menu" class="main-menu collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="homepage"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                    </li>
+                    <h3 class="menu-title">Details</h3><!-- /.menu-title -->
+                    
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Record</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-th"></i><a href="addrecord">Add Record</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="recordview">View Record</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Applications</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-th"></i><a href="booking">Booking</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="deletebooking">Delete Booking</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="applicationview">Status Update</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="bookingview">Booking List</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Content</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-th"></i><a href="addcontent">Add Content</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="contentview">View Content</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Contact</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="menu-icon fa fa-th"></i><a href="contact">View</a></li>
+                            
+                        </ul>
+                    </li>
+                    
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </nav>
+    </aside><!-- /#left-panel -->
+
+    <!-- Left Panel -->
+
+    <!-- Right Panel -->
+
+    <div id="right-panel" class="right-panel">
+
+        <!-- Header-->
+        <header id="header" class="header">
+
+            <div class="header-menu">
+
+                <div class="col-sm-7">
+                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                    <div class="header-left">
+                        <div class="dropdown for-notification">
+                            <div class="dropdown-menu" aria-labelledby="notification">
+                            </div>
+                        </div>
+                        <div class="dropdown for-message">   
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-5">
+                    <div class="user-area dropdown float-right">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="user-avatar rounded-circle" src="{{image.url}}">
+                        </a>
+
+                        <div class="user-menu dropdown-menu">
+                            <a class="nav-link" href="#"><i class="fa fa-user"></i>
+                                <button data-target="#abc" data-toggle="modal" class="btn pmd-ripple-effect btn-primary pmd-btn-raised" 
+                                type="button" style="background-color: transparent; border: none;
+                                cursor:pointer; color:black;">Profile</button></a>
+                            <a class="nav-link" href="logout"><i class="fa fa-power-off"></i> <button 
+                                class="btn pmd-ripple-effect btn-primary pmd-btn-raised" 
+                                type="button" style="background-color: transparent; border: none;
+                                cursor:pointer; color:black;">Logout</button></a>
+                        </div>
+                    </div>
+
+                    <div class="language-select dropdown" id="language-select">
+                        <a class="dropdown-toggle" href="#"  aria-haspopup="true" aria-expanded="true">
+                            <i>Hi Admin</i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="language">
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </header><!-- /header -->
+        <!-- Header-->
+
+        <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Ladhar Club </h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li class="active">Admin</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="content mt-3">
+            <div class="animated fadeIn">
+                <div class="row justify-content-center align-items-center h-100">
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong>Add Record</strong> 
+                            </div>
+                        <div class="card-body card-block">
+                            <form action="recordaddition" name="record" onsubmit="return validate()" method="post" autocomplete="off" enctype="multipart/form-data" class="form-horizontal">
+                                {%csrf_token%}
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="user-input" class=" form-control-label">UserName:</label></div>
+                                    <div class="col-12 col-md-9"><input type="text" id="username" name="username" placeholder="UserName" class="form-control" required><small class="form-text text-muted"><div class="usercolor">{{one}}</div></small></div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="password-input" class=" form-control-label">Password:</label></div>
+                                    <div class="col-12 col-md-9"><input type="password" id="password" name="password" placeholder="Enter Name" class="form-control" required><small class="help-block form-text" ></small></div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="name-input" class=" form-control-label">Name:</label></div>
+                                    <div class="col-12 col-md-9"><input type="text" id="name" name="name" placeholder="Enter Name" class="form-control" required><small class="help-block form-text" id="name_small"></small></div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="phone-input" class=" form-control-label">Phone:</label></div>
+                                    <div class="col-12 col-md-9"><input type="number" id="phone" name="phone" placeholder="Enter Phone" class="form-control" required><small class="help-block form-text"></small></div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="email-input" class=" form-control-label">Email:</label></div>
+                                    <div class="col-12 col-md-9"><input type="email" id="email" name="email" placeholder="Enter Email" class="form-control" required><small class="help-block form-text" id="email_small"></small></div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="date-input" class=" form-control-label">Joining Date:</label></div>
+                                    <div class="col-12 col-md-9"><input id="datepicker" name="date" placeholder="Enter Date"  class="form-control" required><small class="help-block form-text"></small></div>
+                                </div>
+                                <script>
+                                    $('#datepicker').datepicker({
+                                        uiLibrary: 'bootstrap4'
+                                    });
+                                </script>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="status-input" class=" form-control-label" >Status:</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <select name="status" id="status" class="form-control" required>
+                                            <option value="none">Please select</option>
+                                            <option value="Active">Active</option>
+                                            <option value="Inactive">Inactive</option> 
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="activity-input" class=" form-control-label">Group:</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <select name="group" id="group" class="form-control" required>
+                                            <option value="none">Please select</option>
+                                            <option value="Singing">Singing</option>
+                                            <option value="Dancing">Dancing</option>
+                                            <option value="Arts">Arts</option>
+                                            <option value="Personality Development">Personality Development</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="slot-input" class=" form-control-label">Slot:</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <select name="slot" id="slot" class="form-control" required>
+                                            <option value="none">Please select</option>
+                                            <option value="Morning">Morning</option>
+                                            <option value="Afternoon">Afternoon</option>
+                                            <option value="Evening">Evening</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="fees-input" class=" form-control-label" >Fees:</label></div>
+                                    <div class="col-12 col-md-9"><input type="number" id="fees" name="fees" placeholder="Enter Fees" class="form-control" required><small class="help-block form-text"></small></div>
+                                </div>   
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label for="address-input" class=" form-control-label">Address:</label></div>
+                                    <div class="col-12 col-md-9"><textarea name="address" id="address" rows="5" placeholder="Content..." class="form-control"></textarea></div>
+                                </div>
+                                  
+                            
+                        
+                        <div class="card-footer">
+                            <div class="row justify-content-center align-items-center h-100">
+                                <button type="submit" class="btn btn-primary btn-sm">
+                                    <i class="fa fa-dot-circle-o"></i> Submit
+                                </button>
+                                
+                            </div>
+                        </div>
+                    </form>
+                    <div class="messcolor">
+                        {% for message in messages%}
+                        <h5>{{message}}</h5>
+                        {%endfor%}
+                    </div>
+                    </div>
+                </div>
+            </div>                                   
+        </div>
+    </div>
+</div>
+<div tabindex="-1" class="modal pmd-modal fade" id="abc" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                 
+                  <div class="media-body">
+                    <h3 class="card-title">Ladhar Clubs</h3>
+                    <p class="card-subtitle">{{name}}</p>
+                  </div>
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+            </div>
+            <div class="pmd-modal-media"><img width="700" height="450" class="img-fluid" src="{{image.url}}"> </div>
+            <div class="modal-body"> 
+                <p>Cards provide context and an entry point to more robust information and views. Don't overload cards with extraneous information or actions.</p>
+            </div>
+            <div class="modal-footer">
+                <div class="card-text text-sm-center">
+                    <a href="#"><i class="fa fa-facebook pr-1"></i></a>
+                    <a href="#"><i class="fa fa-twitter pr-1"></i></a>
+                    <a href="#"><i class="fa fa-linkedin pr-1"></i></a>
+                    <a href="#"><i class="fa fa-pinterest pr-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    
+
+
+<script src="{% static 'staff/vendors/jquery/dist/jquery.min.js' %}"></script>
+
+<script src="{% static 'staff/vendors/popper.js/dist/umd/popper.min.js' %}"></script>
+<script src="{% static 'staff/vendors/jquery-validation/dist/jquery.validate.min.js' %}"></script>
+<script src="{% static 'staff/vendors/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js' %}"></script>
+
+<script src="{% static 'staff/vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'staff/assets/js/main.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+{%load static%}
+<!doctype html>
+
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Booking Seat </title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+
+
+    <link rel="stylesheet" href="{% static 'staff/vendors/bootstrap/dist/css/bootstrap.min.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'staff/assets/css/style.css' %}">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+<style>
+    .messcolor{
+        color:red;
+        
+    }
+</style>
+<script>
+
+</script>
+</head>
+
+<body class="bg-dark">
+
+
+    <div class="sufee-login d-flex align-content-center flex-wrap">
+        <div class="container">
+            <div class="login-content">
+                <div class="login-logo">
+                    <h1  style="color:whitesmoke">
+                        Ladhar Clubs
+                    </h1>
+                </div>
+                <div class="login-logo">
+                    <h3  style="color:whitesmoke">
+                        Booking Check
+                    </h3>
+                </div>
+                <div class="login-form">
+                    <h2 class="messcolor">{{message}} </h2>     
+                    <a href="{% url 'memberhome' %}"><button type="button" class="btn btn-success">
+                            Home
+                    </button></a>
+                            
+                            
+                    </form>   
+                </div> 
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{% static 'staff/vendors/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'staff/vendors/popper.js/dist/umd/popper.min.js' %}"></script>
+    <script src="{% static 'staff/vendors/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'staff/assets/js/main.js' %}"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+{%load static%}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Ladhar Club</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'member/css/style.css' %}">
+    <style>
+      .messcolor{
+        color:red;
+        font-size:1rem;
+      }
+      .mescolor{
+        color:green;
+        font-size:1rem;
+      }
+    </style>
+    <script>
+      function bookingseat() {
+        var x = document.forms["booking"]["group"].value;
+        var y = document.forms["booking"]["available"].value;
+        if (x == "") {
+          alert("Booking form is incomplete");
+          return false;
+        }
+        else{
+          if(y==0){
+            alert("No seat is available right now");
+            return false;
+          }
+        }
+        return true;
+
+      }
+    </script>
+  </head>
+  <body>
+    
+    <div class="wrapper d-flex align-items-stretch">
+      <nav id="sidebar">
+        <div class="p-4 pt-5">
+          <a href="#" class="img logo rounded-circle mb-5" style="background-image: url({{context.user.image.url}});"></a>
+          <ul class="list-unstyled components mb-5">
+            <li class="active">
+              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Slot</a>
+              <ul class="collapse list-unstyled" id="homeSubmenu">
+                
+                <li>
+                    <a href="{% url 'checkbooking' slot='Morning' %}">Morning</a>
+                </li>
+                <li>
+                    <a href="{% url 'checkbooking' slot='Afternoon' %}">Afternoon</a>
+                </li>
+                <li>
+                    <a href="{% url 'checkbooking' slot='Evening' %}">Evening</a>
+                </li>
+                
+              </ul>
+            </li>
+            
+            
+          </ul>
+
+          <div class="footer">
+            <p> &copy;All right are reserved by Ladhar Club </p>
+          </div>
+
+        </div>
+      </nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+              <i class="fa fa-bars"></i>
+              <span class="sr-only">Toggle Menu</span>
+            </button>
+            <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="nav navbar-nav ml-auto">
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'memberhome'  %}">Home</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-6 offset mt-1">
+                <div class="jumbotron" style="background-color: whitesmoke;">
+                    <h3 class="display-7">Ladhar Clubs</h3>
+                    <p class="messcolor">{{record}}</p>
+                    <p class="mescolor">{{theme}}</p>
+                    <hr class="my-10"> 
+                    <form action="confirmbooking" name="booking" onsubmit="return bookingseat()" method="POST" autocomplete="off" enctype="multipart/form-data" class="form-horizontal">
+                      {%csrf_token%} 
+                      <div class="form-group col-md-12">
+                        <label for="input-1">Group:</label>&nbsp;<small id="group_small"></small>
+                        <input type="text" class="form-control" value="{{group}}" name="group" readonly>
+                      </div> 
+                    <div class="form-group col-md-12">
+                      <label for="input-1">Username:</label>&nbsp;<small id="username_small"></small>
+                      <input type="text" class="form-control" value="{{context.record.username}}" name="username" readonly>
+                    </div>             
+                      
+                      <div class="form-group col-md-12">
+                        <label for="input-1">Date:</label>&nbsp;<small id="date_small"></small>
+                        <input type="text" class="form-control" value="{{date}}" name="date" readonly>
+                      </div>             
+                      <div class="form-group col-md-12">
+                        <label for="input-2">Slot:</label>&nbsp;<small id="slot_small"></small>
+                        <input type="text" class="form-control" value="{{slot}}" name="slot" readonly>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <label for="input-3">Available:</label>&nbsp;<small id="available_small"></small>
+                        <input type="number" class="form-control" value="{{available}}" id="available" name="available" readonly>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <label for="input-4">Booked:</label>&nbsp;<small id="booked_small"></small>
+                        <input type="number" class="form-control" value="{{booked}}" id="booked" name="booked" readonly>
+                      </div>
+                      <div class="form-group col-md-12">
+                        <input type="submit" class="btn btn-primary py-1 px-1" value="Submit" >
+                      </div>
+                      
+                    </form>
+                </div>
+            </div>
+            
+          </div>
+        </div>    
+        
+      </div>
+    </div>
+
+    <script src="{% static 'member/js/jquery.min.js' %}"></script>
+    <script src="{% static 'member/js/popper.js' %}"></script>
+    <script src="{% static 'member/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'member/js/main.js' %}"></script>
+  </body>
+</html>
+

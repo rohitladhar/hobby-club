@@ -1,0 +1,317 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ladhar Clubs</title>
+    <!---Font Awesome Icons-->
+    <link rel="stylesheet" href="{% static 'css/all.css' %}">
+
+    <!---Owl -Carousel-->
+
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+    <!---AOS Library-->
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+    <!---Custom Style-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+    
+</head>
+<body>
+
+    <!--------------------Navigation---------------->
+    <nav class="nav">
+        <div class="nav-menu flex-row">
+            <div class="nav-brand">
+                <a href="#" class="text-gray">Ladhar Clubs</a>
+            </div>
+            <div class="toggle-collapse">
+                <div class="toggle-icons">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+            <div>
+                <ul class="nav-items">
+                    <li class="nav-link">
+                        <a href="index">Home</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#package">Packages</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#activities">Activities</a>
+                    </li>
+                    
+                    <li class="nav-link">
+                        <a href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#about">About</a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="login">Login</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="social text-gray">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </nav>
+    <!---------x----------Navigation-----x----------->
+    <!-------------------Main Site Section------------------>
+
+    <main>
+       <!--------------------Site Title------------------->
+        <section class="site-title">
+            <div class="site-background" data-aos="fade-up" data-aos-delay="500">
+                <h3> A home for Enthusiastic Individuals  </h3>
+                <h1>Ladhar Recreational Clubs</h1>
+                <button class="btn">Explorer</button>
+            </div>
+        </section>
+        <!---------x----------Site Title------x------------> 
+        <!--------------------Site Content------------------->
+       
+        
+
+        <!-------------------Blog Carousel------------------> 
+        <section>
+            <div class="blog" id="package">
+                <div class="container">
+                    <div class="owl-carousel owl-theme blog-post">
+                        <div class="blog-content" data-aos="fade-right" data-aos-delay="100">
+                            <div class="blog-title">
+                                <h3>Silver</h3>
+                                <p class="blog-writing">
+                                This package comes with weekly singing classes. After completion, a person will be 
+                                able to sing a song properly. Along with this course, a singing teacher teaches various
+                                musical instruments to candidates such that Tabla, Santoor, Guitar and Drums.
+                                </p>
+                                
+                                <button class="btn btn-blog">Join</button>
+                                <span><b>&#8377 10000</b></span>
+                            </div>
+                        </div>
+                        <div class="blog-content" data-aos="fade-left" data-aos-delay="100">
+                            <div class="blog-title">
+                                <h3>Gold</h3>
+                                <p class="blog-writing">
+                                    This package comes with weekly dancing classes. After completion, a person will be 
+                                    awarded as a professional dancer. In this course, a dance teacher takes various classes
+                                    such as Traditional dance class,Western dance class and Cultural dance class.
+                                </p>  
+                                    
+                                    <button class="btn btn-blog">Join</button>
+                                    <span><b>&#8377 15000</b></span>
+                                
+                            </div>
+                        </div>
+                        <div class="blog-content"data-aos="fade-right" data-aos-delay="100">
+                            <div class="blog-title">
+                                <h3>Platinum</h3>
+                                <p class="blog-writing">
+                                    This package comes with weekly arts classes. This course is especially designed for those 
+                                    candidates who are passionate for painting and abstract art. The center of attraction of this 
+                                    course is adobe photoshop classes taken by employeed professionals.
+                                </p>    
+                                    
+                                    
+                                    <button class="btn btn-blog">Join</button>
+                                    <span><b>&#8377 20000</b></span>
+                                
+                            </div>
+                        </div>
+                        <div class="blog-content"data-aos="fade-left" data-aos-delay="100">
+                            <div class="blog-title">
+                                <h3>Diamond </h3>
+                                <p class="blog-writing">
+                                    This package comes with weekly personality development classes. Retired Army Officers and 
+                                    Business coaches give lectures about personality traits,business strategies and inter-personal 
+                                    skills. Group discussions and stage lectures are included in this course.
+                                </p>   
+                                    
+                                    <button class="btn btn-blog">Join</button>
+                                    <span><b>&#8377 25000</b></span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="owl-navigation">
+                        <span class="owl-nav-prev"><i class="fas fa-long-arrow-alt-left"></i></span>
+                        <span class="owl-nav-next"><i class="fas fa-long-arrow-alt-right"></i></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-----------x--------Blog Carousel--------x----------> 
+        <!-------------------About Us------------------> 
+        <section class="container"id="about">
+            <div class="about-content" data-aos="zoom-in" data-aos-delay="100" >
+                <div class="mid-section">
+                    <img src="static/assets/owner.jpg" alt="owner">
+                    <h2 style="margin: 1rem;">Owner of Clubs</h2>
+                    <p class="activity-writing">Recreational means "something done for recreation," and recreation, 
+                        which was originally "the curing of a sick person," combines the Latin words 're', "again" and 'creare', "to create."
+                        Today we think of recreational activities as curing our boredom.<br/>
+                        Participating in leisure and recreation activities can help you better manage stress and reduce depression. 
+                        Leisure provides you the chance to find balance in your life; it also puts you in control of how you're spending your time,
+                        which is an important consideration because you may feel overwhelmed by obligations.
+                    </p>
+                    <p class="owner-sign">
+                        <img src="static/assets/sign.PNG" style="float:right; padding-right:4rem" alt="sign"><br/>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rohit Ladhar
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!---------x----------About us--------x----------> 
+
+        <!--------------------Banner------------------->
+        <div class="banner" data-aos="fade-down" data-aos-delay="100" id="activities">
+            <span class="text1" data-aos="fade-down" data-aos-delay="200">Activities</span>
+            <span class="text2">Ladhar Club</span>
+        </div>
+        <!-----------x---------Banner------x------------->
+        <!---------------------Activities-------------------->
+        <section class="container">
+            <div class="activity-content-1" data-aos="zoom-in" data-aos-delay="300">
+                <div class="mid-section">
+                    <img src="static/assets/singing.jpg" alt="singing">
+                    <h2 style="margin: 1rem;">Singing</h2>
+                    <p class="activity-writing"> Singing is the act of producing musical sounds with 
+                        the voice and augments regular speech by the use of sustained tonality, rhythm,
+                        and a variety of vocal techniques. 
+                        A person who sings is called a singer or vocalist.<br/>
+                        Almost anyone has the ability to sing, except for someone with damaged vocal cords,
+                        but not everyone has a good singing voice. You can definitely improve your 
+                        singing voice through practice and a variety of training methods.<br/>
+                        Having a good voice means having a good voice throughout a song, not just now and then. 
+                        It means having consistent volume, tone, pitching, support, and style at all times,
+                        and it will also help to know what singing conditions are most conducive to consistent singing.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section class="container">
+            <div class="activity-content-2" data-aos="zoom-in" data-aos-delay="100">
+                <div class="mid-section">
+                    <img src="static/assets/dancing.jpg" alt="dancing">
+                    <h2 style="margin: 1rem;">Dancing</h2>
+                    <p class="activity-writing"> Dance is a performing art form consisting of purposefully selected sequences of human movement. 
+                        This movement has aesthetic and symbolic value, and is acknowledged as dance by performers and observers within a particular culture.
+                        Dance can be categorized and described by its choreography, by its repertoire of movements, or by its historical period or place of origin.
+                        <br/>
+                        The division of dance into types can be made on many different grounds. Function (e.g., theatrical, religious, recreational)
+                        is an obvious ground, but distinctions can also be made between tribal, ethnic, and folk dance,
+                        between amateur and professional, and above all between different genres and styles.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section class="container">
+            <div class="activity-content-3" data-aos="zoom-in" data-aos-delay="100">
+                <div class="mid-section">
+                    <img src="static/assets/arts.jpg" alt="dancing">
+                    <h2 style="margin: 1rem;">Arts</h2>
+                    <p class="activity-writing"> Art is a diverse range of human activities in creating visual, auditory or performing artifacts (artworks),
+                        expressing the author's imaginative, conceptual ideas, or technical skill, intended to be appreciated for their beauty or emotional power.
+                        Other activities related to the production of works of art include the criticism of art, the study of the history of art, and the aesthetic 
+                        dissemination of art.
+                        <br/>
+                        The three classical branches of art are painting, sculpture and architecture. Music, theatre, film, dance, and other performing arts,
+                        as well as literature and other media such as interactive media, are included in a broader definition of the arts.
+                        <br/>
+                        Though the definition of what constitutes art is disputed and has changed over time, general descriptions mention an idea of 
+                        imaginative or technical skill stemming from human agency and creation. The nature of art and related concepts, such as creativity and interpretation,
+                        are explored in a branch of philosophy known as aesthetics.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section class="container">
+            <div class="activity-content-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="mid-section">
+                    <img src="static/assets/pd.jpg" alt="dancing">
+                    <h2 style="margin: 1rem;">Personality Development</h2>
+                    <p class="activity-writing">Personality development is the relatively enduring pattern of the thoughts, feelings, and behaviors that distinguish individuals from each other.
+                        The dominant viewpoint in personality psychology indicates that personality emerges early and continues to develop across one's lifespan. Adult personality traits are 
+                        believed to have a basis in infant temperament, meaning that individual differences in disposition and behavior appear early in life, potentially before language of conscious
+                        self-representation develop. The Five Factor Model of personality maps onto the dimensions of childhood temperament, suggesting that individual differences in levels of the 
+                        corresponding personality traits (neuroticism, extraversion, openness to experience, agreeableness, and conscientiousness) are present from young ages.
+                   
+                    </p>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <!-----------x---------Activities------x------------->
+       
+        <!--------------------Contact us------------------->
+    <div class="contact-section" id="contact" >
+        <h1>Contact Us</h1>
+        <div class="contact-border"></div>
+            <form action="contactus" method="POST" autocomplete="off" class="contact-form">
+                {%csrf_token%}
+                <input type="text" name="fname" class="contact-form-text" placeholder="First Name" required>
+                <input type="text" name="lname" class="contact-form-text" placeholder="Last Name" required>
+                <input type="number" name="phone" class="contact-form-text" placeholder="Phone" required>
+                <input type="email" name="email" class="contact-form-text" placeholder="Email" required>
+                <select name="group" id="contact-select" class="option" required>
+                    <option class="select-option" value="#">Choose Activity</option>
+                    <option class="select-option" value="Singing">Singing</option>
+                    <option class="select-option" value="Dancing">Dancing</option>
+                    <option class="select-option" value="Arts">Arts</option>
+                    <option class="select-option" value="Personality Development">Personality Development</option>
+                </select>
+                <textarea name="desc" cols="30" rows="5" class="contact-form-text" required>
+                </textarea>  
+                
+                <input type="submit" class="contact-form-btn" value="Submit">
+                </form>
+
+            
+    </div>   
+
+        <!-----------x--------Contact Us--------x----------> 
+
+        <!-----------x--------Site Content--------x----------> 
+
+        
+        
+    </main>
+    <hr>
+    <div class="move-up">
+        <span><i class="fas fa-arrow-circle-up fa-2x"></i></span>
+    </div>
+    <div class="footer">
+        &copy;All right are reserved by Ladhar Club 
+    </div>
+   
+    <!---------x----------Main Site Section-----x----------->
+    
+
+
+    <!--Jquery Library File-->
+    <script src="{% static 'js/jquery3.5.1.min.js' %}"></script>
+
+    <!---Owl -Carousel.js-->
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+
+    <!-----------AOS Library-->
+    <script src="{% static 'js/aos.js' %}"></script>
+    <!--Custom JavaScript File-->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
